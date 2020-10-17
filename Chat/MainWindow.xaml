@@ -5,17 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chat"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Chat" Height="450" Width="500"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary Source="Resources/ChatStyle.xaml"/>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="155*"/>
+            <ColumnDefinition Width="440*"/>
         </Grid.ColumnDefinitions>
-        
-        
+
+        <Label Content="Your NickName :" VerticalAlignment="Center" Margin="20 0 0 0"/>
+        <TextBox Name="NickName" Grid.Column="1" Style="{StaticResource MyTextBox}" Margin="15 0 15 0"/>
+        <TextBox Name="ChatBox" Grid.Row="2" Grid.ColumnSpan="2" Margin="10"/>
+        <TextBox Name="MsgBox" Grid.Row="3" Grid.ColumnSpan="2" Margin="10"/>
+
+        <Button Name="ServConnect" Grid.Column="1" Grid.Row="1" Width="200" Height="25" Content="Connect to Server" Click="ServConnect_Click"/>
+        <Button Name="SendMsg" Grid.Column="1" Grid.Row="4" Content="Send Message" Width="150" Height="30" Click="SendMsg_Click"/>
+
     </Grid>
 </Window>
